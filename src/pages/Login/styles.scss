@@ -1,0 +1,130 @@
+@use "../../breakpoints";
+@use "../../colors";
+
+.login-background {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: colors.$red;
+}
+
+.login-wrapper {
+  max-width: breakpoints.$max-page-width;
+  width: 100%;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoints.sm {
+    flex-direction: row;
+    align-items: stretch;
+    height: 70%;
+    margin: auto;
+  }
+
+  @include breakpoints.md {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  @include breakpoints.lg {
+    padding-left: 13rem;
+    padding-right: 13rem;
+    height: 60%;
+  }
+}
+
+.login-text {
+  padding: 1rem;
+  padding-right: 2rem;
+  font-size: 1em;
+
+  @include breakpoints.sm {
+    flex-grow: 2;
+    font-size: 1.5em;
+  }
+
+  @include breakpoints.md {
+    flex-grow: 4;
+    font-size: 2em;
+  }
+
+  @include breakpoints.lg {
+    font-size: 2.5em;
+  }
+
+  h1,
+  p {
+    color: white;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    transform-origin: bottom left;
+    transform: rotate(-5deg);
+  }
+
+  p {
+    font-size: 1em;
+    margin-bottom: 2rem;
+  }
+}
+
+.login-form {
+  flex-grow: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+
+  @include breakpoints.sm {
+    max-width: 25rem;
+    flex-grow: 1;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  p,
+  button {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    white-space: nowrap;
+    margin-top: 0.2rem;
+  }
+
+  p {
+    margin-right: 0.5rem;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    color: colors.$dark-turquoise;
+    text-decoration: underline;
+    transition: background-color 0.5s;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      text-decoration: none;
+      background-color: colors.$turquoise;
+    }
+  }
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+}
