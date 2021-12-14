@@ -1,0 +1,28 @@
+$bp-small: 37.5em;
+$bp-medium: 56.25em;
+$bp-large: 75em;
+$max-page-width: 112rem;
+
+@mixin sm {
+  @media (min-width: #{$bp-small}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$bp-medium}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$bp-large}) {
+    @content;
+  }
+}
+
+@mixin cus($breakpoint) {
+  @media (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
