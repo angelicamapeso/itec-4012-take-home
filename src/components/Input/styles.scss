@@ -23,8 +23,7 @@ input[type="submit"] {
   transition-property: color, background-color;
   transition-duration: 0.5s;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: colors.$black;
     background-color: colors.$turquoise;
     cursor: pointer;
