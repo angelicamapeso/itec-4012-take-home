@@ -17,7 +17,7 @@ export default function Login() {
     <div className="login-background">
       <div className="login-wrapper">
         <section className="login-text">
-          <h1>Woops!</h1>
+          <h1 className="woops-logo-animated">Woops!</h1>
           <p>Made a mistake?<br />Let's laugh at it together.</p>
         </section>
         <section className="login-form">

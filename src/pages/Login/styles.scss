@@ -63,8 +63,6 @@
     font-size: 2em;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-    transform-origin: bottom left;
-    transform: rotate(-5deg);
   }
 
   p {
@@ -115,8 +113,7 @@
     text-decoration: underline;
     transition: background-color 0.5s;
 
-    &:hover,
-    &:focus {
+    &:hover {
       cursor: pointer;
       text-decoration: none;
       background-color: colors.$turquoise;

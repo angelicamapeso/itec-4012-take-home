@@ -14,3 +14,25 @@ input {
   font-family: "Noto Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: colors.$black;
 }
+
+@keyframes wiggle {
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.woops-logo {
+  transform-origin: center center;
+  transform: rotate(-5deg);
+
+  &:hover {
+    animation: 1s ease-in-out 0s infinite alternate wiggle;
+    text-decoration: underline;
+  }
+}
+
+.woops-logo-animated {
+  transform-origin: center center;
+  transform: rotate(-5deg);
+  animation: 1.5s ease-in-out 0s infinite alternate wiggle;
+}
