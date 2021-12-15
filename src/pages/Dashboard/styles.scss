@@ -5,5 +5,9 @@
   margin: 0 auto;
   width: 100%;
   max-width: breakpoints.$max-feed-width;
-  padding: 1rem;
+  padding: 2rem 1rem;
+
+  .woops-builder {
+    margin-bottom: 2rem;
+  }
 }
