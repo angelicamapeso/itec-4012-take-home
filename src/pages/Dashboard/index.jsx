@@ -1,9 +1,11 @@
 import "./styles.scss";
 
+import WoopsBuilder from "../../components/WoopsBuilder";
+
 export default function Dashboard() {
   return (
-    <>
-      <h1>Dashboard</h1>
-    </>
+    <div className="dashboard-wrapper">
+      <WoopsBuilder />
+    </div>
   );
 }
