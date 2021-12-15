@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { WoopsContextProvider } from "./context/woopsContext";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <WoopsContextProvider>
     <App />
-  </React.StrictMode>,
+  </WoopsContextProvider>,
   document.getElementById('root')
 );
 
