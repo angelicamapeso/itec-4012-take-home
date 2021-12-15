@@ -73,8 +73,7 @@ header {
     border-radius: 0.5rem;
     border: 2px solid transparent;
 
-    &:hover,
-    &:focus {
+    &:hover {
       text-decoration: underline;
       background-color: colors.$turquoise;
       color: colors.$black;
