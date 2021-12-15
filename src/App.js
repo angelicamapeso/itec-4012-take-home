@@ -4,6 +4,7 @@ import './App.scss';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import MainNav from "./components/MainNav";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
@@ -11,6 +12,7 @@ import Profile from "./pages/Profile";
 function App() {
   return (
     <Router>
+      <MainNav />
       <main>
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
