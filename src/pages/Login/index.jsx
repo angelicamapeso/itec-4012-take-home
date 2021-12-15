@@ -2,6 +2,9 @@ import "./styles.scss";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 import Input, { INPUT_TYPES } from "../../components/Input";
 
@@ -9,8 +12,34 @@ export default function Login() {
   const [isLoggingIn, setIsLoggingIn] = useState(true);
   const { register, handleSubmit } = useForm();
 
+  const navigate = useNavigate();
+
+  const loginUser = async ({ email, password }) => {
+    try {
+      const auth = getAuth();
+      const loginUser = await signInWithEmailAndPassword(auth, email, password);
+      navigate("/");
+    } catch(error) {
+      console.error("Error connecting to firebase!", error);
+    }
+  }
+
+  const signupUser = async ({ email, password }) => {
+    try {
+      const auth = getAuth();
+      const signUpUser = await createUserWithEmailAndPassword(auth, email, password);
+      navigate("/");
+    } catch(error) {
+      console.error("Error connecting to firebase!", error);
+    }
+  }
+
   const submitCredentials = (formVals) => {
-    console.log(formVals);
+    if (isLoggingIn) {
+      loginUser(formVals);
+    } else {
+      signupUser(formVals);
+    }
   }
 
   return (
