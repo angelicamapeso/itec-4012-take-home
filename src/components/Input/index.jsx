@@ -10,6 +10,7 @@ export const INPUT_TYPES = {
 };
 
 export default function Input({
+  className="",
   type = "text",
   required = false,
   label = "",
@@ -31,6 +32,7 @@ export default function Input({
           <label htmlFor={name}>{label}</label> : null
       }
       <input
+        className={className}
         {...register}
         name={name}
         required={required}
