@@ -4,6 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
+import WoopsBuilder from "../../components/WoopsBuilder";
 import WoopsContext from "../../context/woopsContext";
 
 import WoopsFeed from "../../components/WoopsFeed";
@@ -37,6 +38,13 @@ export default function Profile() {
     }
   }, [user]);
 
+  useEffect(() => {
+    if (user) {
+      const userWoopData = woopsData.getUserWoops(user.email);
+      setUserWoops(userWoopData);
+    }
+  }, [user, woopsData.woops])
+
   const getWoopData = async () => {
     try {
       const response = await fetch('https://firestore.googleapis.com/v1/projects/woops-store/databases/(default)/documents/woops/');
@@ -62,14 +70,15 @@ export default function Profile() {
         <h1>How are you doing, { user ? user.email.match(/^.+(?=@)/)[0] : "username" }?</h1>
         <div className="profile-msg">
           { userWoops.length === 0 ?
-            <p>Everyone makes mistakes! Everyone has those days!</p> :
+            <p>Don't be ashamed. Everyone makes mistakes! Everyone has those days! Let's laugh at it together.</p> :
             <>
               <p>So far, you've <span className="bold">wooped</span> {userWoops.length} time{userWoops.length > 1 ? "s" : ""}! That's a lot of learning you've done!</p>
-              <p>Let's look back on it and laugh (or try to!). Don't worry. You'll get em' next time!</p>
+              <p>Care to share more? Or maybe we'll just look back on it and laugh (or try to!)</p>
             </>
           }
         </div>
       </div>
+      <WoopsBuilder />
       <WoopsFeed woopsList={userWoops} />
     </div>
   );
