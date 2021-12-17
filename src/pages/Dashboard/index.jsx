@@ -54,6 +54,7 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-wrapper">
+      <h1>Feeling embarrassed? So are we!</h1>
       <WoopsFeed woopsList={feed} />
     </div>
   );
