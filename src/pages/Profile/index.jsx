@@ -2,12 +2,14 @@ import "./styles.scss";
 
 import { useEffect, useState, useContext } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 import WoopsContext from "../../context/woopsContext";
 
 import WoopsFeed from "../../components/WoopsFeed";
 
 export default function Profile() {
+  const navigate = useNavigate();
   const [ user, setUser ] = useState(null);
   const [ userWoops, setUserWoops ] = useState([]);
   const woopsData = useContext(WoopsContext);
@@ -19,6 +21,7 @@ export default function Profile() {
         setUser(newUser);
       } else {
         setUser(null);
+        navigate("/login");
       }
     });
   }, []);
