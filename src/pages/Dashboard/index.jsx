@@ -31,10 +31,12 @@ export default function Dashboard() {
         fields: {
           text: { stringValue: textVal },
           email: { stringValue: emailVal },
-        }
-      }) => ({ email: emailVal, text: textVal }));
-      setFeed(fData);
-      woopsData.initializeWoops(fData);
+        },
+        updateTime,
+      }) => ({ email: emailVal, text: textVal, updateTime }));
+      const sortedWoops = woopsData.sortWoops(fData);
+      setFeed(sortedWoops);
+      woopsData.initializeWoops(sortedWoops);
     } catch(error) {
       console.error(error);
     }
