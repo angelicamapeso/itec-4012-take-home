@@ -1,6 +1,9 @@
 import "./styles.scss";
 
 import { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import WoopsContext from "../../context/woopsContext";
 
@@ -8,15 +11,23 @@ import WoopsBuilder from "../../components/WoopsBuilder";
 import WoopsFeed from "../../components/WoopsFeed";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const [ feed, setFeed ] = useState([]);
   const woopsData = useContext(WoopsContext);
 
   useEffect(() => {
-    if (woopsData.woops.length > 0) {
-      setFeed(woopsData.woops);
-    } else {
-      getWoopData();
-    }
+    const auth = getAuth();
+    onAuthStateChanged(auth, (newUser) => {
+      if (!newUser) {
+        navigate("/login");
+      } else {
+        if (woopsData.woops.length > 0) {
+          setFeed(woopsData.woops);
+        } else {
+          getWoopData();
+        }
+      }
+    });
   }, []);
 
   useEffect(() => {
