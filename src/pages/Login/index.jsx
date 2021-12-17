@@ -17,7 +17,7 @@ export default function Login() {
   const loginUser = async ({ email, password }) => {
     try {
       const auth = getAuth();
-      const loginUser = await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch(error) {
       console.error("Error connecting to firebase!", error);
@@ -27,7 +27,7 @@ export default function Login() {
   const signupUser = async ({ email, password }) => {
     try {
       const auth = getAuth();
-      const signUpUser = await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch(error) {
       console.error("Error connecting to firebase!", error);
