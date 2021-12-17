@@ -5,34 +5,7 @@
   border: 2px solid colors.$black;
   border-radius: 0.5rem;
 
-  .woop {
-    padding: 1rem;
-    font-size: 1em;
-
-    @include breakpoints.sm {
-      padding: 1.5rem;
-    }
-  }
-
-  .icon {
-    margin-right: 0.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .email {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .text {
-    margin-top: 0.5rem;
-    font-size: 1.2em;
-  }
-
-  .woop:not(:last-of-type) {
+  .woop-card:not(:last-of-type) {
     border-bottom: 1px solid colors.$black;
   }
 }
