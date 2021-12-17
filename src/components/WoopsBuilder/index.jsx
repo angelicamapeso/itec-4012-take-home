@@ -62,7 +62,7 @@ export default function WoopsBuilder({
     <form className="woops-builder" onSubmit={submitWoop}>
       <textarea
         onChange={onWoopChange}
-        placeholder="Mistakes were made!"
+        placeholder="Made a mistake? Let's laugh at it together"
         value={woopText}
         maxLength={maxLength}
       ></textarea>

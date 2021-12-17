@@ -7,7 +7,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import WoopsContext from "../../context/woopsContext";
 
-import WoopsBuilder from "../../components/WoopsBuilder";
 import WoopsFeed from "../../components/WoopsFeed";
 
 export default function Dashboard() {
@@ -55,7 +54,6 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-wrapper">
-      <WoopsBuilder />
       <WoopsFeed woopsList={feed} />
     </div>
   );
