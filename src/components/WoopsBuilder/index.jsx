@@ -1,6 +1,9 @@
 import "./styles.scss";
 
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import WoopsContext from "../../context/woopsContext";
+
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import Input from "../Input";
 
@@ -8,16 +11,51 @@ export default function WoopsBuilder({
   maxLength = "150",
 }) {
   const [ woopText, setWoopText ] = useState("");
+  const [ user, setUser ] = useState(null);
+  const woopContext = useContext(WoopsContext);
+
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (newUser) => {
+      if (newUser) {
+        setUser(newUser);
+      } else {
+        setUser(null);
+      }
+    });
+  }, [])
 
   const onWoopChange = (e) => {
     setWoopText(e.target.value);
   }
 
-  const submitWoop = (e) => {
+  const submitWoop = async (e) => {
     e.preventDefault();
-    console.log({
-      text: woopText,
-    })
+
+    const formattedData = {
+      fields: {
+        email: {
+          stringValue: user.email,
+        },
+        text: {
+          stringValue: woopText,
+        },
+      }
+    };
+
+    try {
+      const response = await fetch('https://firestore.googleapis.com/v1/projects/woops-store/databases/(default)/documents/woops/', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(formattedData)
+      });
+      woopContext.addWoop({ email: user.email, text: woopText });
+      setWoopText("");
+    } catch(error) {
+      console.error(error);
+    }
   }
 
   return (
