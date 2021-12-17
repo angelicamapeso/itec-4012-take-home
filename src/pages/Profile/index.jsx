@@ -70,7 +70,7 @@ export default function Profile() {
         <h1>How are you doing, { user ? user.email.match(/^.+(?=@)/)[0] : "username" }?</h1>
         <div className="profile-msg">
           { userWoops.length === 0 ?
-            <p>Don't be ashamed. Everyone makes mistakes! Everyone has those days! Let's laugh at it together.</p> :
+            <p>Don't be ashamed. Everyone makes mistakes! Everyone has those days!</p> :
             <>
               <p>So far, you've <span className="bold">wooped</span> {userWoops.length} time{userWoops.length > 1 ? "s" : ""}! That's a lot of learning you've done!</p>
               <p>Care to share more? Or maybe we'll just look back on it and laugh (or try to!)</p>
