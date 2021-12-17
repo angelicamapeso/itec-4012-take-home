@@ -19,6 +19,10 @@ export default function Dashboard() {
     }
   }, []);
 
+  useEffect(() => {
+    setFeed(woopsData.woops);
+  }, [woopsData.woops])
+
   const getWoopData = async () => {
     try {
       const response = await fetch('https://firestore.googleapis.com/v1/projects/woops-store/databases/(default)/documents/woops/');
