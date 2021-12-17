@@ -44,7 +44,7 @@ export default function WoopsBuilder({
     };
 
     try {
-      const response = await fetch('https://firestore.googleapis.com/v1/projects/woops-store/databases/(default)/documents/woops/', {
+      await fetch('https://firestore.googleapis.com/v1/projects/woops-store/databases/(default)/documents/woops/', {
         headers: {
           'Content-Type': 'application/json'
         },
