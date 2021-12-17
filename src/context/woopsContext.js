@@ -5,6 +5,7 @@ const WoopsContext = React.createContext({
   sortWoops: () => { },
   initializeWoops: () => { },
   addWoop: () => { },
+  getUserWoops: () => { },
 });
 
 export const WoopsContextProvider = ({ children }) => {
@@ -26,6 +27,10 @@ export const WoopsContextProvider = ({ children }) => {
     setWoops([newWoop, ...woops]);
   }
 
+  const getUserWoops = (email) => {
+    return woops.filter(woop => woop.email === email);
+  }
+
   return (
     <WoopsContext.Provider
       value={{
@@ -33,6 +38,7 @@ export const WoopsContextProvider = ({ children }) => {
         sortWoops,
         initializeWoops,
         addWoop,
+        getUserWoops,
       }}
     >
       {children}
