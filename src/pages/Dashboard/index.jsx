@@ -27,7 +27,7 @@ export default function Dashboard() {
         }
       }
     });
-  }, []);
+  });
 
   useEffect(() => {
     setFeed(woopsData.woops);

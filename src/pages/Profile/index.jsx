@@ -25,7 +25,7 @@ export default function Profile() {
         navigate("/login");
       }
     });
-  }, []);
+  });
 
   useEffect(() => {
     if (user) {
@@ -36,14 +36,15 @@ export default function Profile() {
         setUserWoops(userWoopData);
       }
     }
-  }, [user]);
+  // eslint-disable-next-line
+  }, [user, woopsData]);
 
   useEffect(() => {
     if (user) {
       const userWoopData = woopsData.getUserWoops(user.email);
       setUserWoops(userWoopData);
     }
-  }, [user, woopsData.woops])
+  }, [user, woopsData, woopsData.woops])
 
   const getWoopData = async () => {
     try {
