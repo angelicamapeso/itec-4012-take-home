@@ -1,6 +1,7 @@
 {
   "name": "woops",
   "version": "0.1.0",
+  "homepage":"https://angelicamapeso.github.io/itec-4012-take-home",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
