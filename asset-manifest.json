@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/itec-4012-take-home/static/css/main.08e5c27b.chunk.css",
-    "main.js": "/itec-4012-take-home/static/js/main.9deb1b17.chunk.js",
-    "main.js.map": "/itec-4012-take-home/static/js/main.9deb1b17.chunk.js.map",
+    "main.js": "/itec-4012-take-home/static/js/main.69c680f0.chunk.js",
+    "main.js.map": "/itec-4012-take-home/static/js/main.69c680f0.chunk.js.map",
     "runtime-main.js": "/itec-4012-take-home/static/js/runtime-main.534883cb.js",
     "runtime-main.js.map": "/itec-4012-take-home/static/js/runtime-main.534883cb.js.map",
-    "static/js/2.008405aa.chunk.js": "/itec-4012-take-home/static/js/2.008405aa.chunk.js",
-    "static/js/2.008405aa.chunk.js.map": "/itec-4012-take-home/static/js/2.008405aa.chunk.js.map",
+    "static/js/2.fbb44c49.chunk.js": "/itec-4012-take-home/static/js/2.fbb44c49.chunk.js",
+    "static/js/2.fbb44c49.chunk.js.map": "/itec-4012-take-home/static/js/2.fbb44c49.chunk.js.map",
     "static/js/3.fd30e8b3.chunk.js": "/itec-4012-take-home/static/js/3.fd30e8b3.chunk.js",
     "static/js/3.fd30e8b3.chunk.js.map": "/itec-4012-take-home/static/js/3.fd30e8b3.chunk.js.map",
     "index.html": "/itec-4012-take-home/index.html",
     "static/css/main.08e5c27b.chunk.css.map": "/itec-4012-take-home/static/css/main.08e5c27b.chunk.css.map",
-    "static/js/2.008405aa.chunk.js.LICENSE.txt": "/itec-4012-take-home/static/js/2.008405aa.chunk.js.LICENSE.txt"
+    "static/js/2.fbb44c49.chunk.js.LICENSE.txt": "/itec-4012-take-home/static/js/2.fbb44c49.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.534883cb.js",
-    "static/js/2.008405aa.chunk.js",
+    "static/js/2.fbb44c49.chunk.js",
     "static/css/main.08e5c27b.chunk.css",
-    "static/js/main.9deb1b17.chunk.js"
+    "static/js/main.69c680f0.chunk.js"
   ]
 }
